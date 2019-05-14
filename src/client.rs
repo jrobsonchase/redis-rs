@@ -1,7 +1,7 @@
 use futures::Future;
 
-use connection::{connect, Connection, ConnectionInfo, ConnectionLike, IntoConnectionInfo};
-use types::{RedisError, RedisResult, Value};
+use crate::connection::{connect, Connection, ConnectionInfo, ConnectionLike, IntoConnectionInfo};
+use crate::types::{RedisError, RedisResult, Value};
 
 /// The client type.
 #[derive(Debug, Clone)]
@@ -46,15 +46,15 @@ impl Client {
 
     pub fn get_async_connection(
         &self,
-    ) -> impl Future<Item = ::aio::Connection, Error = RedisError> {
-        ::aio::connect(self.connection_info.clone())
+    ) -> impl Future<Item = crate::aio::Connection, Error = RedisError> {
+        crate::aio::connect(self.connection_info.clone())
     }
 
     pub fn get_shared_async_connection(
         &self,
-    ) -> impl Future<Item = ::aio::SharedConnection, Error = RedisError> {
+    ) -> impl Future<Item = crate::aio::SharedConnection, Error = RedisError> {
         self.get_async_connection()
-            .and_then(move |con| ::aio::SharedConnection::new(con))
+            .and_then(move |con| crate::aio::SharedConnection::new(con))
     }
 }
 

@@ -1,10 +1,5 @@
-extern crate redis;
-
-extern crate futures;
-extern crate partial_io;
 #[macro_use]
 extern crate quickcheck;
-extern crate tokio;
 
 mod support;
 

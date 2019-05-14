@@ -1,5 +1,3 @@
-extern crate redis;
-
 use redis::RedisResult;
 use std::process::exit;
 

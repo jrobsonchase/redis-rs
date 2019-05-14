@@ -1,9 +1,5 @@
 #![allow(dead_code)]
 
-extern crate futures;
-extern crate net2;
-extern crate rand;
-
 use redis;
 
 use std::env;

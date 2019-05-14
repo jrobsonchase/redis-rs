@@ -1,8 +1,3 @@
-extern crate redis;
-
-extern crate futures;
-extern crate tokio;
-
 use futures::{future, Future};
 
 use support::*;

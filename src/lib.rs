@@ -35,8 +35,6 @@
 //! to ask for a connection from it:
 //!
 //! ```rust,no_run
-//! extern crate redis;
-//!
 //! fn do_something() -> redis::RedisResult<()> {
 //!     let client = redis::Client::open("redis://127.0.0.1/")?;
 //!     let mut con = client.get_connection()?;
@@ -99,7 +97,6 @@
 //! make working with the protocol easier:
 //!
 //! ```rust,no_run
-//! extern crate redis;
 //! use redis::Commands;
 //!
 //! fn do_something(con: &mut redis::Connection) -> redis::RedisResult<()> {
@@ -300,10 +297,6 @@
 //! concessions to make it fit the constraints of `futures`.
 //!
 //! ```rust,no_run
-//! extern crate redis;
-//! extern crate futures;
-//! extern crate tokio;
-//!
 //! use futures::Future;
 //!
 //! # fn main() {
@@ -349,22 +342,10 @@
 
 #[macro_use]
 extern crate combine;
-extern crate bytes;
-extern crate dtoa;
-extern crate itoa;
-extern crate sha1;
-extern crate url;
 #[macro_use]
 extern crate futures;
-extern crate tokio_executor;
 #[macro_use]
 extern crate tokio_io;
-extern crate tokio_codec;
-extern crate tokio_sync;
-extern crate tokio_tcp;
-
-#[cfg(unix)]
-extern crate tokio_uds;
 
 // public api
 pub use client::Client;

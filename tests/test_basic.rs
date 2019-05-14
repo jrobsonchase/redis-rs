@@ -1,7 +1,3 @@
-extern crate net2;
-extern crate rand;
-extern crate redis;
-
 use redis::{Commands, ControlFlow, PipelineCommands, PubSubCommands};
 
 use std::collections::{BTreeMap, BTreeSet};

@@ -1,11 +1,11 @@
 // can't use rustfmt here because it screws up the file.
 #![cfg_attr(rustfmt, rustfmt_skip)]
-use types::{FromRedisValue, ToRedisArgs, RedisResult, NumericBehavior};
-use connection::{ConnectionLike, Msg, Connection};
-use cmd::{cmd, Cmd, Pipeline, Iter};
+use crate::types::{FromRedisValue, ToRedisArgs, RedisResult, NumericBehavior};
+use crate::connection::{ConnectionLike, Msg, Connection};
+use crate::cmd::{cmd, Cmd, Pipeline, Iter};
 
 #[cfg(feature = "geospatial")]
-use geo;
+use crate::geo;
 
 macro_rules! implement_commands {
     (
@@ -126,7 +126,6 @@ macro_rules! implement_commands {
         /// directly.  Other than that it works the same however.
         pub trait PipelineCommands {
             #[doc(hidden)]
-            #[inline]
             fn perform(&mut self, con: Cmd) -> &mut Self;
 
             $(

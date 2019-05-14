@@ -1,8 +1,8 @@
 use sha1::Sha1;
 
-use cmd::cmd;
-use connection::ConnectionLike;
-use types::{ErrorKind, FromRedisValue, RedisResult, ToRedisArgs};
+use crate::cmd::cmd;
+use crate::connection::ConnectionLike;
+use crate::types::{ErrorKind, FromRedisValue, RedisResult, ToRedisArgs};
 
 /// Represents a lua script.
 pub struct Script {
