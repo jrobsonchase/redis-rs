@@ -339,6 +339,7 @@
 //! is a lot more stable than the structs.
 
 #![deny(non_camel_case_types)]
+#![feature(async_await)]
 
 #[macro_use]
 extern crate combine;
@@ -355,7 +356,7 @@ pub use connection::{
     parse_redis_url, transaction, Connection, ConnectionAddr, ConnectionInfo, ConnectionLike,
     IntoConnectionInfo, Msg, PubSub,
 };
-pub use parser::{parse_async, parse_redis_value, Parser};
+pub use parser::{parse_redis_value, Parser};
 pub use script::{Script, ScriptInvocation};
 
 pub use types::{

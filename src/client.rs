@@ -44,18 +44,18 @@ impl Client {
         Ok(connect(&self.connection_info)?)
     }
 
-    pub fn get_async_connection(
-        &self,
-    ) -> impl Future<Item = crate::aio::Connection, Error = RedisError> {
-        crate::aio::connect(self.connection_info.clone())
-    }
+    // pub fn get_async_connection(
+    //     &self,
+    // ) -> impl Future<Item = crate::aio::Connection, Error = RedisError> {
+    //     crate::aio::connect(self.connection_info.clone())
+    // }
 
-    pub fn get_shared_async_connection(
-        &self,
-    ) -> impl Future<Item = crate::aio::SharedConnection, Error = RedisError> {
-        self.get_async_connection()
-            .and_then(move |con| crate::aio::SharedConnection::new(con))
-    }
+    // pub fn get_shared_async_connection(
+    //     &self,
+    // ) -> impl Future<Item = crate::aio::SharedConnection, Error = RedisError> {
+    //     self.get_async_connection()
+    //         .and_then(move |con| crate::aio::SharedConnection::new(con))
+    // }
 }
 
 impl ConnectionLike for Client {
